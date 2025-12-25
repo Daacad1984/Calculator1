@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="card" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p class="hint">Admin: admin / 1234</p>
+</div>
+
+<!-- CALCULATOR -->
+<div class="card hidden" id="calcBox">
+  <div class="top">
+    <h2>Calculator</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+  </div>
+
+  <input type="text" id="display" disabled>
+
+  <div class="buttons">
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="append('/')">÷</button>
+    <button onclick="append('*')">×</button>
+    <button onclick="append('-')">−</button>
+
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button onclick="append('+')">+</button>
+
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+
+    <button onclick="append('0')" class="zero">0</button>
+    <button onclick="append('.')">.</button>
+    <button onclick="calculate()" class="equal">=</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="card hidden" id="adminBox">
+  <div class="top">
+    <h2>Admin Panel</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+  </div>
+  <p>Total Logins:</p>
+  <h1 id="loginCount">0</h1>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
